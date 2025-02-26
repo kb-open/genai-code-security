@@ -7,6 +7,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer, TrainingArguments,
 import random
 import subprocess
 import re
+from utils import log_results
 
 def security_penalty_score(code_snippet):
     penalties = {
@@ -34,4 +35,4 @@ def apply_rlhf(model_output):
 def apply_reinforcement_learning():
     sample_code = "input = eval(input('Enter command: '))"
     secure_code, score = apply_rlhf(sample_code)
-    print("RLHF Score:", score)
+    log_results(f"RLHF Score for output: {score}")

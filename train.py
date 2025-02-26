@@ -7,6 +7,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer, TrainingArguments,
 import random
 import subprocess
 import re
+from utils import log_results
 
 def load_security_dataset():
     return load_dataset("./data/owasp/sard_secure_coding")
@@ -46,3 +47,5 @@ def train_model():
     # Save the fine-tuned model
     model.save_pretrained("./models/secure_coding_model")
     tokenizer.save_pretrained("./models/secure_coding_model")
+    
+    log_results("Model training completed successfully.")
