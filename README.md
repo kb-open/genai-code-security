@@ -22,6 +22,21 @@ cd secure-ai-coding
 pip install -r requirements.txt
 ```
 
+## Project Structure
+```bash
+secure-ai-coding/
+│── train.py               # Fine-tunes the AI model on security-audited datasets
+│── rlhf.py                # Applies RLHF to refine model behavior
+│── security_scan.py        # Runs security scans using CodeQL and SonarQube
+│── secure_ai_model.py      # Core functions for model training and evaluation
+│── requirements.txt        # Required dependencies
+│── README.md               # Project documentation
+│── config.yaml             # Configuration settings for training and evaluation
+│── data/                   # Security-audited datasets (OWASP, SARD)
+│── models/                 # Saved fine-tuned models
+│── results/                # Evaluation results and logs
+```
+
 ## Usage  
 ### Fine-Tune the Model  
 ```bash
